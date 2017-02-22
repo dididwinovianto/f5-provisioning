@@ -1,0 +1,5 @@
+---
+- hosts: f5-development
+  gather_facts: True
+  roles:
+    - role: bigip_pool
