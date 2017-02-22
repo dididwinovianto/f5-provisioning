@@ -1,19 +1,7 @@
 ---
-  vars_prompt:
-    - name: "bigip_server_address"
-      prompt: your server address please?
-
-    - name: "bigip_server_user"
-      prompt: what user you want to use?
-
-    - name: "bigip_server_password"
-      prompt: please input your password
-
-    - name: "bigip_pool_name"
-      prompt: "please input your pool name?"
-
-    - name: "bigip_partition"
-      prompt: "your partition please?"
-
-    - name: "bigip_lb_method"
-      prompt: "what loadbalancing method you want use?"
+bigip_server_address: 192.168.2.245
+bigip_server_user: root
+bigip_server_password:
+bigip_pool_name: test
+bigip_partition: common
+bigip_lb_method: least_connection_member
