@@ -1,5 +1,8 @@
 ---
 - hosts: ansible
   gather_facts: True
+  vars_prompt:
+    - name: "bigip_pool_name"
+      prompt: "are you sure want to delete this pool?"
   roles:
     - role: bigip_pool

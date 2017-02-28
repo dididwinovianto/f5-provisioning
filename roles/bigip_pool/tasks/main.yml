@@ -5,13 +5,58 @@
   - name: install bigsuds
     pip: name=bigsuds
 
-  - name: create bigip pool
+  - name: create loyalty front pool
     bigip_pool:
       server: "{{bigip_server_address}}"
       user: "{{bigip_server_user}}"
       password: "{{bigip_server_password}}"
       state: present
-      name: "{{bigip_pool_name}}"
-      lb_method: "{{bigip_lb_method}}"
+      name: "{{bigip_loyalty_front_pool_name}}"
+      lb_method: "{{bigip_loyalty_front_pool_lb}}"
       validate_certs: false
-    tags: bigip_create_pool
+    tags: bigip_create_loyalty_front_pool
+
+  - name: create loyalty back pool
+    bigip_pool:
+      server: "{{bigip_server_address}}"
+      user: "{{bigip_server_user}}"
+      password: "{{bigip_server_password}}"
+      state: present
+      name: "{{bigip_loyalty_back_pool_name}}"
+      lb_method: "{{bigip_loyalty_back_pool_lb}}"
+      validate_certs: false
+    tags: bigip_create_loyalty_back_pool
+
+  - name: add loyalty front pool member
+    bigip_pool:
+      server: "{{bigip_server_address}}"
+      user: "{{bigip_server_user}}"
+      password: "{{bigip_server_password}}"
+      state: present
+      name: "{{bigip_loyalty_front_pool_name}}"
+      host: "{{bigip_loyalty_front_address}}"
+      port: "{{bigip_loyalty_front_port}}"
+      validate_certs: false
+    tags: bigip_add_loyalty_front_member
+
+  - name: add loyalty back pool member
+    bigip_pool:
+      server: "{{bigip_server_address}}"
+      user: "{{bigip_server_user}}"
+      password: "{{bigip_server_password}}"
+      state: present
+      name: "{{bigip_loyalty_back_pool_name}}"
+      host: "{{bigip_loyalty_back_address}}"
+      port: "{{bigip_loyalty_back_port}}"
+      validate_certs: false
+    tags: bigip_add_loyalty_back_member
+
+  - name: delete pool
+    bigip_pool:
+      server: "{{bigip_server_address}}"
+      user: "{{bigip_server_user}}"
+      password: "{{bigip_server_password}}"
+      state: absent
+      name: "{{bigip_pool_name}}"
+      validate_certs: false
+    tags: bigip_delete_pool
