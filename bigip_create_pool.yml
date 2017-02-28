@@ -1,0 +1,10 @@
+---
+- hosts: ansible
+  gather_facts: True
+  vars_prompt:
+    - name: "bigip_pool_name"
+      prompt: "your pool name?"
+    - name: "bigip_lb_method"
+      prompt: "your loadbalance method?"
+  roles:
+    - role: bigip_pool/create

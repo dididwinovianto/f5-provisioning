@@ -1,0 +1,11 @@
+---
+  - name: create pool
+    bigip_pool:
+      server: "{{bigip_server_address}}"
+      user: "{{bigip_server_user}}"
+      password: "{{bigip_server_password}}"
+      state: present
+      name: "{{bigip_pool_name}}"
+      lb_method: "{{bigip_lb_method}}"
+      validate_certs: false
+    tags: bigip_create_pool

@@ -1,0 +1,10 @@
+---
+  - name: delete pool
+    bigip_pool:
+      server: "{{bigip_server_address}}"
+      user: "{{bigip_server_user}}"
+      password: "{{bigip_server_password}}"
+      state: absent
+      name: "{{bigip_pool_name}}"
+      validate_certs: false
+    tags: bigip_delete_pool

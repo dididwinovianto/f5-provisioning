@@ -3,6 +3,6 @@
   gather_facts: True
   vars_prompt:
     - name: "bigip_pool_name"
-      prompt: "are you sure want to delete this pool?"
+      prompt: "your pool name?"
   roles:
-    - role: bigip_pool
+    - role: bigip_pool/delete

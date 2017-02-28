@@ -1,0 +1,6 @@
+---
+  - name: install f5 sdk
+    pip: name=f5-sdk
+
+  - name: install bigsuds
+    pip: name=bigsuds
