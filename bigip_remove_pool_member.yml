@@ -9,4 +9,4 @@
     - name: "bigip_pool_member_port"
       prompt: "your pool member port?"
   roles:
-    - role: bigip_pool/add_member
+    - role: bigip_pool/remove_member

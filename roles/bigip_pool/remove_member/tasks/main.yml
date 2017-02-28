@@ -1,0 +1,12 @@
+---
+  - name: remove pool member
+    bigip_pool:
+      server: "{{bigip_server_address}}"
+      user: "{{bigip_server_user}}"
+      password: "{{bigip_server_password}}"
+      state: absent
+      name: "{{bigip_pool_name}}"
+      host: "{{bigip_pool_member_address}}"
+      port: "{{bigip_pool_member_port}}"
+      validate_certs: false
+    tags: bigip_add_pool_member
