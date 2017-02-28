@@ -1,4 +1,10 @@
 ---
+  - name: install f5 sdk
+    pip: name=f5-sdk
+
+  - name: install bigsuds
+    pip: name=bigsuds
+
   - name: create bigip pool
     bigip_pool:
       server: "{{bigip_server_address}}"
@@ -6,6 +12,6 @@
       password: "{{bigip_server_password}}"
       state: present
       name: "{{bigip_pool_name}}"
-      partition: "{{bigip_partition}}"
       lb_method: "{{bigip_lb_method}}"
+      validate_certs: false
     tags: bigip_create_pool

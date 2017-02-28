@@ -1,5 +1,5 @@
 ---
-- hosts: f5-development
+- hosts: ansible
   gather_facts: True
   roles:
     - role: bigip_pool

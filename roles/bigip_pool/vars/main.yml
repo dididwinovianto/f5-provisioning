@@ -1,7 +1,7 @@
 ---
 bigip_server_address: 192.168.2.245
-bigip_server_user: root
-bigip_server_password:
+bigip_server_user: admin
+bigip_server_password: P@ssw0rdDev
 bigip_pool_name: test
 bigip_partition: common
 bigip_lb_method: least_connection_member
