@@ -1,5 +1,2 @@
-[f5-development]
-192.168.2.245 ansible_user=root ansible_ssh_private_key_file=/home/ansible/.ssh/id_rsa_ansible
-
 [ansible]
 localhost ansible_connection=local
