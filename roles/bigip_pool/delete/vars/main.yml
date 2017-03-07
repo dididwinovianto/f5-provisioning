@@ -1,4 +1,0 @@
----
-bigip_server_address: 192.168.2.245
-bigip_server_user: admin
-bigip_server_password: P@ssw0rdDev
